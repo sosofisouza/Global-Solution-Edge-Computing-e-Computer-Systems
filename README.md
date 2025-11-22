@@ -66,3 +66,48 @@ Projeto desenvolvido para a disciplina de **Edge Computing & Computer Systems - 
 ## Objetivo
 
 Conscientizar trabalhadores sobre os impactos da automação no mercado de trabalho de forma visual, acessível e interativa, incentivando a busca por requalificação profissional.
+
+## Instruções de Uso
+## Simulação Online (Wokwi)
+
+Acesse o link da simulação: Semáforo de Empregabilidade no Wokwi
+Clique em "Start Simulation" para iniciar
+Aguarde a tela de boas-vindas no LCD
+Pressione o botão verde para navegar entre as profissões
+Observe o LED correspondente acender e a informação no display LCD
+
+
+## Arquivos do Projeto
+
+sketch.ino - Código-fonte principal do Arduino 
+diagram.json - Configuração do circuito para simulação no Wokwi
+README.md - Documentação do projeto
+
+
+## Protocolos de Comunicação
+Este projeto utiliza comunicação digital simples entre Arduino e periféricos:
+
+GPIO (General Purpose Input/Output): Comunicação direta com LEDs (saída digital) e botão (entrada digital com pull-up interno)
+Protocolo Paralelo 4-bit: Comunicação com o display LCD usando 6 pinos (RS, E, D4, D5, D6, D7) para envio de comandos e dados
+Pull-up interno: Botão configurado com INPUT_PULLUP para leitura estável sem necessidade de resistor externo
+
+## Sobre MQTT e HTTP
+O que são?
+
+MQTT (Message Queuing Telemetry Transport): Protocolo de mensageria leve usado em IoT para comunicação entre dispositivos através de um broker central. Ideal para enviar dados de sensores para a nuvem ou receber comandos remotos.
+HTTP (Hypertext Transfer Protocol): Protocolo padrão da web usado para requisições cliente-servidor. Em IoT, permite que dispositivos consumam APIs REST para buscar ou enviar dados pela internet.
+
+## Por que este projeto NÃO utiliza MQTT/HTTP?
+Este protótipo é um dispositivo standalone educacional que funciona de forma completamente independente, sem necessidade de conexão com internet ou servidores externos. Toda a lógica e dados estão embarcados no código Arduino.
+Aplicação futura: Em uma versão conectada à internet (usando ESP32 ou módulo WiFi), poderíamos implementar:
+
+MQTT para publicar estatísticas de uso e profissões mais consultadas em tempo real
+HTTP para buscar atualizações da base de profissões de uma API REST remota
+
+## Dependências
+
+Arduino IDE 1.8.0 ou superior
+Biblioteca LiquidCrystal.h (incluída nativamente no Arduino IDE)
+
+Link da Simulação
+🔗 https://wokwi.com/projects/448014990246792193
